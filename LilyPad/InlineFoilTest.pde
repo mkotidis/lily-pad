@@ -68,7 +68,7 @@ class InlineFoilTest {
     foil.rotate(-foil.phi+PI);
     foil.rotate(0);
     
-    flow = new BDIM(n, m, dt, foil, (float)resolution/Re, QUICK, -1);
+    flow = new BDIM(n, m, dt, foil, (float)resolution/Re, QUICK, 0);
 
     flood = new FloodPlot(window);
     flood.range = new Scale(-1, 1);
@@ -84,7 +84,7 @@ class InlineFoilTest {
     this.dAoA = dAoA; 
     this.uAoA = uAoA; 
     this.heaveAmp = hc*chord*resolution;
-    this.inlineAmp = hc*chord*resolution*1/tan(stk);
+    this.inlineAmp = 0;
     this.omega = TWO_PI/resolution * stru/(2*hc*chord);
     this.period = TWO_PI/omega;
     this.dfrac = 0.5; //Functionality for changing the downstroke to period fraction not fully implemented
